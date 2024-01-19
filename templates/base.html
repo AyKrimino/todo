@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Adding the tailwindcss CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% include 'partials/header.html' %}
+    <div class="bg-gray-300 h-screen flex">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% include 'partials/footer.html' %}
+</body>
+</html>
