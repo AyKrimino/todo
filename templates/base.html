@@ -9,9 +9,9 @@
 
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body class="bg-gray-100 h-screen flex flex-col items-center font-mono relative">
+<body class="bg-gray-100 h-screen flex flex-col items-center justify-center font-mono relative">
     {% include 'partials/navbar.html' %}
-    <div class="">
+    <div class="h-3/4 w-3/4 flex justify-center items-center">
         {% block content %}
         {% endblock %}
     </div>
