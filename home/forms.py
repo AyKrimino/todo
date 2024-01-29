@@ -1,8 +1,14 @@
 from django import forms
-from django.contrib.auth.models import User
+from .models import TodoUser
 
 
-class UserForm(forms.ModelForm):
+class LoginForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ('username', 'email', 'password')
+        model = TodoUser
+        fields = ('email', 'password')
+        
+
+class SignupForm(forms.ModelForm):
+    class Meta:
+        model = TodoUser
+        fields = ('username', 'firstname', 'lastname', 'email', 'password', 'password')

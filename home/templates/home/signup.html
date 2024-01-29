@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <div class="max-h-full bg-gray-200 border border-gray-300 rounded p-4 w-full max-w-screen-sm overflow-auto">
+
+        <div class="">
+            <div class="">
+                <svg class="fill-current w-8 h-8" version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+                    <g fill="#3F51B5">
+                        <polygon points="17.8,18.1 10.4,25.4 6.2,21.3 4,23.5 10.4,29.9 20,20.3"/>
+                        <polygon points="17.8,5.1 10.4,12.4 6.2,8.3 4,10.5 10.4,16.9 20,7.3"/>
+                        <polygon points="17.8,31.1 10.4,38.4 6.2,34.3 4,36.5 10.4,42.9 20,33.3"/>
+                    </g>
+                    <g fill="#90CAF9">
+                        <rect x="24" y="22" width="20" height="4"/>
+                        <rect x="24" y="9" width="20" height="4"/>
+                        <rect x="24" y="35" width="20" height="4"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="">
+                Sign up
+            </div>
+            <div class="">
+                Enter your details below to create your account and get started.
+            </div>
+        </div>
+
+        <div class="">
+            <form method="post">
+                {% csrf_token %}
+                
+                <div class="">
+                    
+                    <div class="">
+                        <div class="">
+                            <label>Username</label>
+                        </div>
+                        {% render_field form.username class="" placeholder="enter..." %}
+                    </div>
+                    
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <label>Email adress</label>
+                            </div>
+                            {% render_field form.email class="" placeholder="example@gmail.com" %}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="">
+                    
+                    <div class="">
+                        <div class="">
+                            <label>Firstname</label>
+                        </div>
+                        {% render_field form.firstname class="" placeholder="enter..." %}
+                    </div>
+                    
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <label>Lastname</label>
+                            </div>
+                            {% render_field form.lastname class="" placeholder="enter..." %}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="">
+                    
+                    <div class="">
+                        <div class="">
+                            <label>Password</label>
+                        </div>
+                        {% render_field form.password class="" type="password" placeholder="enter..." %}
+                    </div>
+                    
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <label>Confirm password</label>
+                            </div>
+                            {% render_field form.password class="" type="password" placeholder="enter..." %}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="">
+                    
+                    <div class="">
+                        <button class="">Confirm</button>
+                    </div>
+
+                    <div class="">
+                        <button class="">Cancel</button>
+                    </div>
+
+                </div>
+
+                <div class="">
+                    Already have an account? <a class="" href="{% url 'login' %}">Login</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+{% endblock %}

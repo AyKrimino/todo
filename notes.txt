@@ -1,0 +1,6 @@
+I learned this things in this project:
+- I learned how to create a custom user model with the AbstractBaseUser model
+- I added custom user permssion using the PermissionsMixin
+- I created a new user manager using BaseUserManager
+- I customized the TodoUser model in django administration site
+- I used the widget tweaks module to make html classes inside django form inputs

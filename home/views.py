@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import UserForm
+from .forms import LoginForm, SignupForm
 
 
 def home(request):
@@ -7,5 +7,10 @@ def home(request):
 
 
 def login(request):
-    form = UserForm()
+    form = LoginForm()
     return render(request, 'home/login.html', {'form': form})
+
+
+def signup(request):
+    form = SignupForm()
+    return render(request, 'home/signup.html', {'form': form})
