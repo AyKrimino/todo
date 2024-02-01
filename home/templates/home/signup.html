@@ -7,7 +7,7 @@
 {% block content %}
     <div class="max-h-full bg-gray-200 border border-gray-300 rounded p-4 w-full max-w-screen-sm overflow-auto">
 
-        <div class="">
+        <div class="mt-2 ml-2 md:ml-14 sm:ml-5 mr-2">
             <div class="">
                 <svg class="fill-current w-8 h-8" version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
                     <g fill="#3F51B5">
@@ -22,92 +22,86 @@
                     </g>
                 </svg>
             </div>
-            <div class="">
+            <div class="my-1 text-3xl text-gray-900">
                 Sign up
             </div>
-            <div class="">
+            <div class="text-xs text-gray-500">
                 Enter your details below to create your account and get started.
             </div>
         </div>
 
-        <div class="">
-            <form method="post">
+        <div class="ml-2 mr-2 mb-2 mt-1">
+            <form method="post" class="flex-col justify-center align-center">
                 {% csrf_token %}
                 
-                <div class="">
+                <div class="sm:flex sm:justify-around sm:align-center sm:mt-4">
                     
                     <div class="">
-                        <div class="">
+                        <div class="text-sm text-gray-700">
                             <label>Username</label>
                         </div>
-                        {% render_field form.username class="" placeholder="enter..." %}
+                        {% render_field form.username class="placeholder:text-sm mt-2 py-1 px-2 w-full rounded border border-gray-300" placeholder="enter..." %}
                     </div>
                     
-                    <div class="">
-                        <div class="">
-                            <div class="">
-                                <label>Email adress</label>
-                            </div>
-                            {% render_field form.email class="" placeholder="example@gmail.com" %}
+                    <div class=" mt-2 sm:mt-0">
+                        <div class="text-sm text-gray-700">
+                            <label>Email adress</label>
                         </div>
+                        {% render_field form.email class="placeholder:text-sm mt-2 py-1 px-2 w-full rounded border border-gray-300" placeholder="example@gmail.com" %}
                     </div>
 
                 </div>
 
-                <div class="">
+                <div class="sm:flex sm:justify-around sm:align-center sm:mt-4">
                     
-                    <div class="">
-                        <div class="">
+                    <div class=" mt-2 sm:mt-0">
+                        <div class="text-sm text-gray-700">
                             <label>Firstname</label>
                         </div>
-                        {% render_field form.firstname class="" placeholder="enter..." %}
+                        {% render_field form.firstname class="placeholder:text-sm mt-2 py-1 px-2 w-full rounded border border-gray-300" placeholder="enter..." %}
                     </div>
                     
-                    <div class="">
-                        <div class="">
-                            <div class="">
-                                <label>Lastname</label>
-                            </div>
-                            {% render_field form.lastname class="" placeholder="enter..." %}
+                    <div class=" mt-2 sm:mt-0">
+                        <div class="text-sm text-gray-700">
+                            <label>Lastname</label>
                         </div>
+                        {% render_field form.lastname class="placeholder:text-sm mt-2 py-1 px-2 w-full rounded border border-gray-300" placeholder="enter..." %}
                     </div>
 
                 </div>
 
-                <div class="">
+                <div class="sm:flex sm:justify-around sm:align-center sm:mt-4">
                     
-                    <div class="">
-                        <div class="">
+                    <div class=" mt-2 sm:mt-0">
+                        <div class="text-sm text-gray-700">
                             <label>Password</label>
                         </div>
-                        {% render_field form.password class="" type="password" placeholder="enter..." %}
+                        {% render_field form.password class="placeholder:text-sm mt-2 py-1 px-2 w-full rounded border border-gray-300" type="password" placeholder="enter..." %}
                     </div>
                     
-                    <div class="">
-                        <div class="">
-                            <div class="">
-                                <label>Confirm password</label>
-                            </div>
-                            {% render_field form.password class="" type="password" placeholder="enter..." %}
+                    <div class=" mt-2 sm:mt-0">
+                        <div class="text-sm text-gray-700">
+                            <label>Confirm password</label>
                         </div>
+                        {% render_field form.password class="placeholder:text-sm mt-2 py-1 px-2 w-full rounded border border-gray-300" type="password" placeholder="enter..." %}
                     </div>
 
                 </div>
 
-                <div class="">
+                <div class="sm:flex sm:flex-row-reverse sm:justify-around sm:mt-4">
                     
-                    <div class="">
-                        <button class="">Confirm</button>
+                    <div class=" mt-2 sm:mt-0">
+                        <button class="sm:px-20  mt-4 hover:bg-indigo-500 rounded w-full py-2 hover:text-gray-200 bg-indigo-700 text-white w-full">Confirm</button>
                     </div>
 
-                    <div class="">
-                        <button class="">Cancel</button>
+                    <div class=" mt-2 sm:mt-0">
+                        <button class="sm:px-20 mt-4 hover:bg-red-600 rounded w-full py-2 border border-gray-300 text-gray-900 w-full">Cancel</button>
                     </div>
 
                 </div>
 
-                <div class="">
-                    Already have an account? <a class="" href="{% url 'login' %}">Login</a>
+                <div class="md:ml-14 sm:ml-5 sm:mt-4 mt-2 sm:mt-0 text-xs text-gray-500">
+                    Already have an account? <a class="text-indigo-700" href="{% url 'login' %}">Login</a>
                 </div>
 
             </form>
