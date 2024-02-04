@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import LoginForm, SignupForm
 
 
-def home(request):
+def index(request):
     return render(request, 'home/index.html')
 
 
