@@ -5,3 +5,4 @@ I learned this things in this project:
 - I customized the TodoUser model in django administration site
 - I used the widget tweaks module to make html classes inside django form inputs
 - I learned how to work with the overflow with tailwindcss
+- I learned how to customize the form fields from the forms.py file
