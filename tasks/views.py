@@ -1,10 +1,20 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import TaskForm
 from .models import Task
 
 
 def display_tasks(request):
     tasks = Task.objects.all()
+    
+    if request.method == 'POST':
+        if request.POST.get('title'):
+            new_task = Task(
+                title=request.POST.get('title'),
+                assigned_user=request.user,            
+            )
+            new_task.save()
+        return redirect('tasks:display-tasks')
+    
     context = {
         'tasks': tasks,
     }
