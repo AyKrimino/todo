@@ -29,8 +29,15 @@ def task_details(request, task_id):
     return render(request, 'tasks/task_details.html', context)
 
 
-def edit_task(request):
-    form = TaskForm()
+def edit_task(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    if request.method == 'POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+        return redirect('tasks:display-tasks')
+    
+    form = TaskForm(instance=task)
     context = {
         'form': form,
     }
