@@ -65,7 +65,7 @@
             {% endfor %}
         </div>
         <div class="flex justify-between items-center mt-4">
-            <div class="text-sm">You have {{ tasks.count }} pending task{% if tasks.count != 1 %}s{% endif %}</div>
+            <div class="text-sm">You have {{ tasks.count }} pending task{{ tasks.count|pluralize }}</div>
             <!-- clear all button -->
             <a href="{% url 'tasks:clear-all' %}" class="bg-green-500 text-gray-100 hover:bg-green-700 px-2 py-1 rounded text-center text-sm font-medium">Clear All</a>
         </div>
