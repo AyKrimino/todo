@@ -54,3 +54,16 @@ def delete_task(request, task_id):
         'task': task,
     }
     return render(request, 'tasks/delete_task.html', context)
+
+
+def clear_all(request):
+    tasks = Task.objects.all()
+    if request.method == 'POST':
+        tasks.delete()
+        return redirect('tasks:display-tasks')
+    
+    context = {
+        'tasks': tasks,
+    }
+    
+    return render(request, 'tasks/clear_all.html', context)
