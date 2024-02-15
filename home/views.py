@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .forms import LoginForm, SignupForm
 
 
-def index(request):
-    return render(request, 'home/index.html')
+# def index(request):
+#     return render(request, 'home/index.html')
 
 
 def login(request):
@@ -13,4 +13,8 @@ def login(request):
 
 def signup(request):
     form = SignupForm()
-    return render(request, 'home/signup.html', {'form': form})
+    return render(request, 'home/index.html', {'form': form})
+
+
+def about(request):
+    return render(request, 'home/about.html')
